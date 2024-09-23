@@ -1,5 +1,6 @@
 import { Box, Flex, Stack } from "@chakra-ui/react"
 import { Church } from "lucide-react"
+import { MenuNavbar } from "./MenuNavbar"
 
 export const Navbar = () => {
   return (
@@ -12,6 +13,7 @@ export const Navbar = () => {
       borderColor={'red'}
       minH={'60px'}
       direction={'row'}
+      alignItems={'center'}
     >
       <Flex
         alignItems={'center'}
@@ -27,12 +29,14 @@ export const Navbar = () => {
         flexGrow={1}
       >
       </Box>
-      <Box
+      <Flex
         borderColor={'blue'}
         borderWidth={'thin'}
         flexGrow={1}
+        justifyContent={'end'}
       >
-      </Box>
+        <MenuNavbar />
+      </Flex>
     </Stack>
   )
 }
