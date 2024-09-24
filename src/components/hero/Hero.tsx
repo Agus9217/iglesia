@@ -1,4 +1,5 @@
-import { Heading, Stack } from "@chakra-ui/react"
+import { Box, Heading, Stack } from "@chakra-ui/react"
+import Image from "next/image"
 
 export const Hero = () => {
   return (
@@ -10,9 +11,15 @@ export const Hero = () => {
       alignItems={'center'}
       justifyContent={'center'}
     >
-      <Heading>
-        Hero
-      </Heading>
+      <Box>
+        <Image
+          src={'/hero-iglesia.jpg'}
+          width={1280}
+          height={720}
+          alt="iglesia cristiana"
+        />
+
+      </Box>
     </Stack>
   )
 }

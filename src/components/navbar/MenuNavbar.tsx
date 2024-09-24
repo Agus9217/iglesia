@@ -1,49 +1,28 @@
-'use client'
-
-import React, { useRef } from 'react';
 import {
-  Drawer,
-  DrawerBody,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
   Button,
-  useDisclosure
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
 } from '@chakra-ui/react';
+import { AlignRight } from "lucide-react"
 
 export const MenuNavbar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = useRef(null);
-
   return (
-    <>
-      <Button ref={btnRef} onClick={onOpen}>
-        Open Menu
-      </Button>
-
-      <Drawer
-        blockScrollOnMount={false}
-        isOpen={isOpen}
-        placement="right" // Puedes cambiar a "right", "top" o "bottom"
-        onClose={onClose}
-        finalFocusRef={btnRef}
-        size={'full'}
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerBody
-            as={'nav'}
-          >
-            {/* Aquí puedes añadir tus enlaces o elementos del menú */}
-            <p>Link 1</p>
-            <p>Link 2</p>
-            <p>Link 3</p>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
-    </>
+    <Menu
+      autoSelect={false}
+    >
+      <MenuButton as={Button} rightIcon={<AlignRight />}>
+        Menu
+      </MenuButton>
+      <MenuList>
+        <MenuItem>Download</MenuItem>
+        <MenuItem>Create a Copy</MenuItem>
+        <MenuItem>Mark as Draft</MenuItem>
+        <MenuItem>Delete</MenuItem>
+        <MenuItem>Attend a Workshop</MenuItem>
+      </MenuList>
+    </Menu>
   );
 };
 
